@@ -1,0 +1,196 @@
+<!-- Navbar -->
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <span class="is-size-4 has-text-weight-bold text-orange">ЛАЗНЯ</span>
+      </a>
+      <a role="button" class="navbar-burger" [class.is-active]="isMenuOpen()" (click)="toggleMenu()" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarMenu" class="navbar-menu" [class.is-active]="isMenuOpen()">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#about">Про нас</a>
+        <a class="navbar-item" href="#prices">Ціни</a>
+        <a class="navbar-item" href="#gallery">Галерея</a>
+        <a class="navbar-item" href="#contacts">Контакти</a>
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary" href="tel:+380980054499">
+              ЗАБРОНЮВАТИ
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero is-fullheight-with-navbar is-flex is-align-items-center is-justify-content-center">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1 has-text-white mb-6" data-aos="fade-down" data-aos-duration="1000">
+        ЛАЗНЯ НА НОВІЙ БУДОВІ
+      </h1>
+      <p class="subtitle is-3 has-text-white mb-6" data-aos="fade-up" data-aos-delay="300">
+        Традиції оздоровлення та справжній релакс
+      </p>
+      <div data-aos="zoom-in" data-aos-delay="600">
+        <a href="#prices" class="button is-primary is-large is-rounded">ПЕРЕГЛЯНУТИ ЦІНИ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section bg-dark-grey">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Про нашу лазню</h2>
+    <div class="columns is-vcentered">
+      <div class="column is-6" data-aos="fade-right">
+        <p class="is-size-5 mb-5">
+          Наша лазня — це ідеальне місце для тих, хто цінує якісний відпочинок, спокій та здоров'я. Ми поєднуємо традиційні методи паріння з сучасним комфортом.
+        </p>
+        <ul class="is-size-5">
+          <li class="mb-3"><span class="text-orange">✔</span> Велика парна на дровах</li>
+          <li class="mb-3"><span class="text-orange">✔</span> Оздоровчий чан під відкритим небом</li>
+          <li class="mb-3"><span class="text-orange">✔</span> Зона барбекю (мангал)</li>
+          <li class="mb-3"><span class="text-orange">✔</span> Можливість замовлення готової їжі</li>
+        </ul>
+      </div>
+      <div class="column is-6" data-aos="fade-left">
+        <figure class="image is-4by3 gallery-item">
+          <img src="/assets/images/image.png" alt="Interior">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Prices Section -->
+<section id="prices" class="section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Наші послуги та ціни</h2>
+    <div class="columns is-multiline">
+      <!-- Лазня -->
+      <div class="column is-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="price-card has-text-centered">
+          <h3 class="title is-3 text-orange mb-5">ЛАЗНЯ</h3>
+          <div class="mb-4">
+            <p class="is-size-5">Пн-Чт</p>
+            <p><span class="price-value">400</span><span class="price-unit">грн/год</span></p>
+          </div>
+          <div class="mb-5">
+            <p class="is-size-5">Пт-Нд та святкові</p>
+            <p><span class="price-value">500</span><span class="price-unit">грн/год</span></p>
+          </div>
+        </div>
+      </div>
+      <!-- Чан -->
+      <div class="column is-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="price-card has-text-centered">
+          <h3 class="title is-3 text-orange mb-5">ЧАН</h3>
+          <div class="mb-4">
+            <p class="is-size-5">Пн-Чт</p>
+            <p><span class="price-value">500</span><span class="price-unit">грн/год</span></p>
+          </div>
+          <div class="mb-5">
+            <p class="is-size-5">Пт-Нд та святкові</p>
+            <p><span class="price-value">600</span><span class="price-unit">грн/год</span></p>
+          </div>
+        </div>
+      </div>
+      <!-- Мангал -->
+      <div class="column is-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="price-card has-text-centered">
+          <h3 class="title is-3 text-orange mb-5">МАНГАЛ</h3>
+          <div class="mt-6 mb-6">
+            <p class="is-size-5">Оренда</p>
+            <p><span class="price-value">100</span><span class="price-unit">грн</span></p>
+          </div>
+          <p class="is-size-6 mt-5 has-text-grey-light">Весь необхідний інвентар надається</p>
+        </div>
+      </div>
+    </div>
+    <div class="notification is-dark orange-border mt-6 has-text-centered" data-aos="zoom-in">
+      <p class="is-size-5">* Мінімальний час замовлення — <strong>2 години</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="section bg-dark-grey">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Галерея</h2>
+    <div class="columns is-multiline">
+      <div class="column is-4" data-aos="flip-left" data-aos-delay="100">
+        <div class="gallery-item orange-border">
+          <figure class="image is-square">
+            <img src="/assets/images/1.png" alt="Сауна 1">
+          </figure>
+        </div>
+      </div>
+      <div class="column is-4" data-aos="flip-left" data-aos-delay="200">
+        <div class="gallery-item orange-border">
+          <figure class="image is-square">
+            <img src="/assets/images/2.png" alt="Sauna 2">
+          </figure>
+        </div>
+      </div>
+      <div class="column is-4" data-aos="flip-left" data-aos-delay="300">
+        <div class="gallery-item orange-border">
+          <figure class="image is-square">
+            <img src="/assets/images/3.png" alt="Sauna 3">
+          </figure>
+        </div>
+      </div>
+    </div>
+    <div class="has-text-centered mt-6">
+      <p class="is-size-5">Більше фото у нашому <a href="https://www.instagram.com/laznya_na_noviy_budovy/" target="_blank" class="text-orange">Instagram</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- Map & Contacts Section -->
+<section id="contacts" class="section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Де ми знаходимось</h2>
+    <div class="columns">
+      <div class="column is-8" data-aos="zoom-in">
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2591.1345479001334!2d26.6020558!3d48.6768879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4733b9843ef0c329%3A0x8e0b3a2699126f01!2sLaznya!5e0!3m2!1suk!2sua!4v1710000000000!5m2!1suk!2sua" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+      <div class="column is-4" data-aos="fade-left">
+        <div class="box has-background-black has-text-white orange-border p-5">
+          <h3 class="title is-4 text-orange mb-4">Контакти</h3>
+          <p class="mb-3"><strong>Адреса:</strong> м. Кам'янець-Подільський, вул. Князів Коріатовичів, 25-М</p>
+          <p class="mb-3"><strong>Замовлення лазні:</strong> <br><a href="tel:+380980054499" class="has-text-white is-size-5">(098) 005-44-99</a></p>
+          <p class="mb-3"><strong>Замовлення їжі:</strong> <br><a href="tel:+380688287843" class="has-text-white is-size-5">(068) 828-78-43</a></p>
+          <p class="mb-3"><strong>Графік роботи:</strong> Щодня з 10:00 до 23:00</p>
+          <hr class="has-background-dark">
+          <div class="buttons">
+            <a href="https://www.instagram.com/laznya_na_noviy_budovy/" target="_blank" class="button is-dark is-fullwidth">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer has-background-black has-text-centered">
+  <div class="container">
+    <p class="has-text-grey-light">
+      &copy; 2026 ЛАЗНЯ НА НОВІЙ БУДОВІ. Всі права захищені.
+    </p>
+  </div>
+</footer>
