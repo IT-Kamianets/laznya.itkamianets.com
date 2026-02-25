@@ -3,7 +3,7 @@
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item" href="#">
-        <span class="is-size-4 has-text-weight-bold text-orange">ЛАЗНЯ</span>
+        <span class="is-size-4 has-text-weight-bold text-orange">{{ 'navbar.title' | translate }}</span>
       </a>
       <a role="button" class="navbar-burger" [class.is-active]="isMenuOpen()" (click)="toggleMenu()" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
         <span aria-hidden="true"></span>
@@ -14,10 +14,28 @@
 
     <div id="navbarMenu" class="navbar-menu" [class.is-active]="isMenuOpen()">
       <div class="navbar-end">
-        <a class="navbar-item" href="#about">Про нас</a>
-        <a class="navbar-item" href="#prices">Ціни</a>
-        <a class="navbar-item" href="#gallery">Галерея</a>
-        <a class="navbar-item" href="#contacts">Контакти</a>
+        <a class="navbar-item" href="#about">{{ 'navbar.about' | translate }}</a>
+        <a class="navbar-item" href="#prices">{{ 'navbar.prices' | translate }}</a>
+        <a class="navbar-item" href="#gallery">{{ 'navbar.gallery' | translate }}</a>
+        <a class="navbar-item" href="#contacts">{{ 'navbar.contacts' | translate }}</a>
+        
+        <!-- Language Switcher -->
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link is-arrowless">
+            <span class="icon">
+              <i class="fas fa-globe"></i>
+            </span>
+            <span class="is-uppercase ml-1">{{ currentLang() }}</span>
+          </a>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" (click)="changeLang('ua')" [class.is-active]="currentLang() === 'ua'">UA</a>
+            <a class="navbar-item" (click)="changeLang('en')" [class.is-active]="currentLang() === 'en'">EN</a>
+            <a class="navbar-item" (click)="changeLang('de')" [class.is-active]="currentLang() === 'de'">DE</a>
+            <a class="navbar-item" (click)="changeLang('it')" [class.is-active]="currentLang() === 'it'">IT</a>
+            <a class="navbar-item" (click)="changeLang('fr')" [class.is-active]="currentLang() === 'fr'">FR</a>
+          </div>
+        </div>
+
         <a class="navbar-item" href="https://www.instagram.com/laznya_na_noviy_budovy/" target="_blank">
           <span class="icon is-medium text-orange">
             <i class="fab fa-instagram fa-lg"></i>
@@ -26,7 +44,7 @@
         <div class="navbar-item">
           <div class="buttons">
             <a class="button is-primary" href="tel:+380980054499">
-              ЗАБРОНЮВАТИ
+              {{ 'navbar.book' | translate }}
             </a>
           </div>
         </div>
@@ -40,13 +58,13 @@
   <div class="hero-body">
     <div class="container has-text-centered">
       <h1 class="title is-1 has-text-white mb-6" data-aos="fade-down" data-aos-duration="1000">
-        ЛАЗНЯ НА НОВІЙ БУДОВІ
+        {{ 'hero.title' | translate }}
       </h1>
       <p class="subtitle is-3 has-text-white mb-6" data-aos="fade-up" data-aos-delay="300">
-        Традиції оздоровлення та справжній релакс
+        {{ 'hero.subtitle' | translate }}
       </p>
       <div data-aos="zoom-in" data-aos-delay="600">
-        <a href="#prices" class="button is-primary is-large is-rounded">ПЕРЕГЛЯНУТИ ЦІНИ</a>
+        <a href="#prices" class="button is-primary is-large is-rounded">{{ 'hero.button' | translate }}</a>
       </div>
     </div>
   </div>
@@ -55,17 +73,17 @@
 <!-- About Section -->
 <section id="about" class="section bg-dark-grey">
   <div class="container">
-    <h2 class="section-title" data-aos="fade-up">Про нашу лазню</h2>
+    <h2 class="section-title" data-aos="fade-up">{{ 'about.title' | translate }}</h2>
     <div class="columns is-vcentered">
       <div class="column is-6" data-aos="fade-right">
         <p class="is-size-5 mb-5">
-          Наша лазня — це ідеальне місце для тих, хто цінує якісний відпочинок, спокій та здоров'я. Ми поєднуємо традиційні методи паріння з сучасним комфортом.
+          {{ 'about.text' | translate }}
         </p>
         <ul class="is-size-5">
-          <li class="mb-3"><span class="text-orange">✔</span> Велика парна на дровах</li>
-          <li class="mb-3"><span class="text-orange">✔</span> Оздоровчий чан під відкритим небом</li>
-          <li class="mb-3"><span class="text-orange">✔</span> Зона барбекю (мангал)</li>
-          <li class="mb-3"><span class="text-orange">✔</span> Можливість замовлення готової їжі</li>
+          <li class="mb-3"><span class="text-orange">✔</span> {{ 'about.feature1' | translate }}</li>
+          <li class="mb-3"><span class="text-orange">✔</span> {{ 'about.feature2' | translate }}</li>
+          <li class="mb-3"><span class="text-orange">✔</span> {{ 'about.feature3' | translate }}</li>
+          <li class="mb-3"><span class="text-orange">✔</span> {{ 'about.feature4' | translate }}</li>
         </ul>
       </div>
       <div class="column is-6" data-aos="fade-left">
@@ -80,50 +98,50 @@
 <!-- Prices Section -->
 <section id="prices" class="section">
   <div class="container">
-    <h2 class="section-title" data-aos="fade-up">Наші послуги та ціни</h2>
+    <h2 class="section-title" data-aos="fade-up">{{ 'prices.title' | translate }}</h2>
     <div class="columns is-multiline">
       <!-- Лазня -->
       <div class="column is-4" data-aos="fade-up" data-aos-delay="100">
         <div class="price-card has-text-centered">
-          <h3 class="title is-3 text-orange mb-5">ЛАЗНЯ</h3>
+          <h3 class="title is-3 text-orange mb-5">{{ 'prices.sauna' | translate }}</h3>
           <div class="mb-4">
-            <p class="is-size-5">Пн-Чт</p>
-            <p><span class="price-value">400</span><span class="price-unit">грн/год</span></p>
+            <p class="is-size-5">{{ 'prices.weekday' | translate }}</p>
+            <p><span class="price-value">400</span><span class="price-unit">{{ 'prices.hour' | translate }}</span></p>
           </div>
           <div class="mb-5">
-            <p class="is-size-5">Пт-Нд та святкові</p>
-            <p><span class="price-value">500</span><span class="price-unit">грн/год</span></p>
+            <p class="is-size-5">{{ 'prices.weekend' | translate }}</p>
+            <p><span class="price-value">500</span><span class="price-unit">{{ 'prices.hour' | translate }}</span></p>
           </div>
         </div>
       </div>
       <!-- Чан -->
       <div class="column is-4" data-aos="fade-up" data-aos-delay="200">
         <div class="price-card has-text-centered">
-          <h3 class="title is-3 text-orange mb-5">ЧАН</h3>
+          <h3 class="title is-3 text-orange mb-5">{{ 'prices.chan' | translate }}</h3>
           <div class="mb-4">
-            <p class="is-size-5">Пн-Чт</p>
-            <p><span class="price-value">500</span><span class="price-unit">грн/год</span></p>
+            <p class="is-size-5">{{ 'prices.weekday' | translate }}</p>
+            <p><span class="price-value">500</span><span class="price-unit">{{ 'prices.hour' | translate }}</span></p>
           </div>
           <div class="mb-5">
-            <p class="is-size-5">Пт-Нд та святкові</p>
-            <p><span class="price-value">600</span><span class="price-unit">грн/год</span></p>
+            <p class="is-size-5">{{ 'prices.weekend' | translate }}</p>
+            <p><span class="price-value">600</span><span class="price-unit">{{ 'prices.hour' | translate }}</span></p>
           </div>
         </div>
       </div>
       <!-- Мангал -->
       <div class="column is-4" data-aos="fade-up" data-aos-delay="300">
         <div class="price-card has-text-centered">
-          <h3 class="title is-3 text-orange mb-5">МАНГАЛ</h3>
+          <h3 class="title is-3 text-orange mb-5">{{ 'prices.grill' | translate }}</h3>
           <div class="mt-6 mb-6">
-            <p class="is-size-5">Оренда</p>
+            <p class="is-size-5">{{ 'prices.rent' | translate }}</p>
             <p><span class="price-value">100</span><span class="price-unit">грн</span></p>
           </div>
-          <p class="is-size-6 mt-5 has-text-grey-light">Весь необхідний інвентар надається</p>
+          <p class="is-size-6 mt-5 has-text-grey-light">{{ 'prices.inventory' | translate }}</p>
         </div>
       </div>
     </div>
     <div class="notification is-dark orange-border mt-6 has-text-centered" data-aos="zoom-in">
-      <p class="is-size-5">* Мінімальний час замовлення — <strong>2 години</strong></p>
+      <p class="is-size-5" [innerHTML]="'prices.minTime' | translate"></p>
     </div>
   </div>
 </section>
@@ -131,12 +149,12 @@
 <!-- Gallery Section -->
 <section id="gallery" class="section bg-dark-grey">
   <div class="container">
-    <h2 class="section-title" data-aos="fade-up">Галерея</h2>
+    <h2 class="section-title" data-aos="fade-up">{{ 'gallery.title' | translate }}</h2>
     <div class="columns is-multiline">
       <div class="column is-4" data-aos="flip-left" data-aos-delay="100">
         <div class="gallery-item orange-border">
           <figure class="image is-square">
-            <img src="/assets/images/1.png" alt="Сауна 1">
+            <img src="/assets/images/1.png" alt="Sauna 1">
           </figure>
         </div>
       </div>
@@ -156,7 +174,7 @@
       </div>
     </div>
     <div class="has-text-centered mt-6">
-      <p class="is-size-5">Більше фото у нашому <a href="https://www.instagram.com/laznya_na_noviy_budovy/" target="_blank" class="text-orange">Instagram</a></p>
+      <p class="is-size-5">{{ 'gallery.more' | translate }} <a href="https://www.instagram.com/laznya_na_noviy_budovy/" target="_blank" class="text-orange">Instagram</a></p>
     </div>
   </div>
 </section>
@@ -164,7 +182,7 @@
 <!-- Map & Contacts Section -->
 <section id="contacts" class="section">
   <div class="container">
-    <h2 class="section-title" data-aos="fade-up">Де ми знаходимось</h2>
+    <h2 class="section-title" data-aos="fade-up">{{ 'contacts.title' | translate }}</h2>
     <div class="columns">
       <div class="column is-8" data-aos="zoom-in">
         <div class="map-container">
@@ -177,11 +195,11 @@
       </div>
       <div class="column is-4" data-aos="fade-left">
         <div class="box has-background-black has-text-white orange-border p-5">
-          <h3 class="title is-4 text-orange mb-4">Контакти</h3>
-          <p class="mb-3"><strong>Адреса:</strong> м. Кам'янець-Подільський, вул. Князів Коріатовичів, 25-М</p>
-          <p class="mb-3"><strong>Замовлення лазні:</strong> <br><a href="tel:+380980054499" class="has-text-white is-size-5">(098) 005-44-99</a></p>
-          <p class="mb-3"><strong>Замовлення їжі:</strong> <br><a href="tel:+380688287843" class="has-text-white is-size-5">(068) 828-78-43</a></p>
-          <p class="mb-3"><strong>Графік роботи:</strong> Щодня з 10:00 до 23:00</p>
+          <h3 class="title is-4 text-orange mb-4">{{ 'contacts.subtitle' | translate }}</h3>
+          <p class="mb-3"><strong>{{ 'contacts.addressLabel' | translate }}</strong> {{ 'contacts.addressValue' | translate }}</p>
+          <p class="mb-3"><strong>{{ 'contacts.saunaOrder' | translate }}</strong> <br><a href="tel:+380980054499" class="has-text-white is-size-5">(098) 005-44-99</a></p>
+          <p class="mb-3"><strong>{{ 'contacts.foodOrder' | translate }}</strong> <br><a href="tel:+380688287843" class="has-text-white is-size-5">(068) 828-78-43</a></p>
+          <p class="mb-3"><strong>{{ 'contacts.workingHoursLabel' | translate }}</strong> {{ 'contacts.workingHours' | translate }}</p>
           <hr class="has-background-dark">
           <div class="has-text-centered mt-4">
             <a href="https://www.instagram.com/laznya_na_noviy_budovy/" target="_blank" class="text-orange is-size-2">
@@ -197,7 +215,7 @@
 <footer class="footer has-background-black has-text-centered">
   <div class="container">
     <p class="has-text-grey-light">
-      &copy; 2026 ЛАЗНЯ НА НОВІЙ БУДОВІ. Всі права захищені.
+      {{ 'footer.rights' | translate }}
     </p>
   </div>
 </footer>

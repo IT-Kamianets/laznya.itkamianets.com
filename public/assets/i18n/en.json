@@ -1,0 +1,52 @@
+{
+  "navbar": {
+    "title": "SAUNA",
+    "about": "About Us",
+    "prices": "Prices",
+    "gallery": "Gallery",
+    "contacts": "Contacts",
+    "book": "BOOK NOW"
+  },
+  "hero": {
+    "title": "SAUNA ON THE NEW BUILDING",
+    "subtitle": "Wellness traditions and true relaxation",
+    "button": "VIEW PRICES"
+  },
+  "about": {
+    "title": "About Our Sauna",
+    "text": "Our sauna is the perfect place for those who value quality rest, peace, and health. We combine traditional steaming methods with modern comfort.",
+    "feature1": "Large wood-fired steam room",
+    "feature2": "Wellness vat under the open sky",
+    "feature3": "BBQ area (grill)",
+    "feature4": "Possibility of ordering ready-made food"
+  },
+  "prices": {
+    "title": "Our Services and Prices",
+    "sauna": "SAUNA",
+    "chan": "VAT",
+    "grill": "GRILL",
+    "weekday": "Mon-Thu",
+    "weekend": "Fri-Sun and holidays",
+    "hour": "UAH/hour",
+    "rent": "Rent",
+    "inventory": "All necessary inventory is provided",
+    "minTime": "* Minimum booking time — <strong>2 hours</strong>"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "more": "More photos on our"
+  },
+  "contacts": {
+    "title": "Where We Are",
+    "subtitle": "Contacts",
+    "addressLabel": "Address:",
+    "addressValue": "Kamianets-Podilskyi, Kniaziv Koriatovychiv St, 25-M",
+    "saunaOrder": "Sauna booking:",
+    "foodOrder": "Food ordering:",
+    "workingHoursLabel": "Working hours:",
+    "workingHours": "Daily from 10:00 to 23:00"
+  },
+  "footer": {
+    "rights": "© 2026 SAUNA ON THE NEW BUILDING. All rights reserved."
+  }
+}

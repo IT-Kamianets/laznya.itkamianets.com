@@ -1,0 +1,52 @@
+{
+  "navbar": {
+    "title": "SAUNA",
+    "about": "À propos",
+    "prices": "Tarifs",
+    "gallery": "Galerie",
+    "contacts": "Contacts",
+    "book": "RÉSERVER"
+  },
+  "hero": {
+    "title": "SAUNA SUR LE NOUVEAU BÂTIMENT",
+    "subtitle": "Traditions de bien-être et véritable détente",
+    "button": "VOIR LES TARIFS"
+  },
+  "about": {
+    "title": "À propos de notre sauna",
+    "text": "Notre sauna est l'endroit idéal pour ceux qui apprécient le repos de qualité, le calme et la santé. Nous combinons les méthodes traditionnelles de vapeur avec le confort moderne.",
+    "feature1": "Grand bain de vapeur au feu de bois",
+    "feature2": "Cuve de bien-être à ciel ouvert",
+    "feature3": "Espace BBQ (grill)",
+    "feature4": "Possibilité de commander des plats cuisinés"
+  },
+  "prices": {
+    "title": "Nos services et tarifs",
+    "sauna": "SAUNA",
+    "chan": "CUVE",
+    "grill": "GRILL",
+    "weekday": "Lun-Jeu",
+    "weekend": "Ven-Dim et jours fériés",
+    "hour": "UAH/heure",
+    "rent": "Location",
+    "inventory": "Tout l'inventaire nécessaire est fourni",
+    "minTime": "* Temps de réservation minimum — <strong>2 heures</strong>"
+  },
+  "gallery": {
+    "title": "Galerie",
+    "more": "Plus de photos sur notre"
+  },
+  "contacts": {
+    "title": "Où nous sommes",
+    "subtitle": "Contacts",
+    "addressLabel": "Adresse:",
+    "addressValue": "Kamianets-Podilskyï, rue Kniaziv Koriatovychiv, 25-M",
+    "saunaOrder": "Réservation sauna:",
+    "foodOrder": "Commande de nourriture:",
+    "workingHoursLabel": "Heures d'ouverture:",
+    "workingHours": "Tous les jours de 10h00 à 23h00"
+  },
+  "footer": {
+    "rights": "© 2026 SAUNA SUR LE NOUVEAU BÂTIMENT. Tous droits réservés."
+  }
+}

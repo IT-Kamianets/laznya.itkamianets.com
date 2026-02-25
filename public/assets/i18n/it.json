@@ -1,0 +1,52 @@
+{
+  "navbar": {
+    "title": "SAUNA",
+    "about": "Chi siamo",
+    "prices": "Prezzi",
+    "gallery": "Galleria",
+    "contacts": "Contatti",
+    "book": "PRENOTA"
+  },
+  "hero": {
+    "title": "SAUNA SUL NUOVO EDIFICIO",
+    "subtitle": "Tradizioni di benessere e vero relax",
+    "button": "VEDI I PREZZI"
+  },
+  "about": {
+    "title": "Sulla nostra sauna",
+    "text": "La nostra sauna è il luogo perfetto per chi apprezza il riposo di qualità, la pace e la salute. Combiniamo i metodi tradizionali di vapore con il comfort moderno.",
+    "feature1": "Ampia sala vapore a legna",
+    "feature2": "Tinozza benessere a cielo aperto",
+    "feature3": "Area BBQ (griglia)",
+    "feature4": "Possibilità di ordinare piatti pronti"
+  },
+  "prices": {
+    "title": "I nostri servizi e prezzi",
+    "sauna": "SAUNA",
+    "chan": "TINOZZA",
+    "grill": "GRIGLIA",
+    "weekday": "Lun-Gio",
+    "weekend": "Ven-Dom e festivi",
+    "hour": "UAH/ora",
+    "rent": "Affitto",
+    "inventory": "Tutto l'inventario necessario è fornito",
+    "minTime": "* Tempo minimo di prenotazione — <strong>2 ore</strong>"
+  },
+  "gallery": {
+    "title": "Galleria",
+    "more": "Altre foto sul nostro"
+  },
+  "contacts": {
+    "title": "Dove siamo",
+    "subtitle": "Contatti",
+    "addressLabel": "Indirizzo:",
+    "addressValue": "Kam'janec'-Podil's'kyj, via Knjaziv Koriatovychiv, 25-M",
+    "saunaOrder": "Prenotazione sauna:",
+    "foodOrder": "Ordine cibo:",
+    "workingHoursLabel": "Orario di lavoro:",
+    "workingHours": "Tutti i giorni dalle 10:00 alle 23:00"
+  },
+  "footer": {
+    "rights": "© 2026 SAUNA SUL NUOVO EDIFICIO. Tutti i diritti riservati."
+  }
+}
