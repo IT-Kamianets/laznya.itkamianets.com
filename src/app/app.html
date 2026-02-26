@@ -1,18 +1,13 @@
-<!-- Navbar -->
-<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+<!-- Desktop Navbar -->
+<nav class="navbar is-fixed-top is-hidden-touch" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item" href="#">
         <span class="is-size-4 has-text-weight-bold text-orange">{{ 'navbar.title' | translate }}</span>
       </a>
-      <a role="button" class="navbar-burger" [class.is-active]="isMenuOpen()" (click)="toggleMenu()" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
     </div>
 
-    <div id="navbarMenu" class="navbar-menu" [class.is-active]="isMenuOpen()">
+    <div id="navbarMenu" class="navbar-menu">
       <div class="navbar-end">
         <a class="navbar-item" href="#about">{{ 'navbar.about' | translate }}</a>
         <a class="navbar-item" href="#prices">{{ 'navbar.prices' | translate }}</a>
@@ -52,6 +47,85 @@
     </div>
   </div>
 </nav>
+
+<!-- Mobile Top Header -->
+<nav class="navbar is-fixed-top is-hidden-desktop mobile-top-nav" role="navigation">
+  <div class="navbar-brand is-flex is-justify-content-space-between is-align-items-center px-4" style="width: 100%;">
+    <a class="navbar-item p-0" href="#">
+      <span class="is-size-4 has-text-weight-bold text-orange">{{ 'navbar.title' | translate }}</span>
+    </a>
+    <div class="is-flex is-align-items-center">
+      <a class="navbar-item p-2" href="https://www.instagram.com/laznya_na_noviy_budovy/" target="_blank">
+        <span class="icon text-orange">
+          <i class="fab fa-instagram fa-lg"></i>
+        </span>
+      </a>
+      <a class="button is-primary is-small ml-2" href="tel:+380980054499">
+        {{ 'navbar.book' | translate }}
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Bottom Navigation -->
+<nav class="mobile-bottom-nav is-hidden-desktop">
+  <a href="#prices" class="mobile-nav-item">
+    <span class="icon">
+      <i class="fas fa-tags"></i>
+    </span>
+    <span>{{ 'navbar.prices' | translate }}</span>
+  </a>
+  <a href="#gallery" class="mobile-nav-item">
+    <span class="icon">
+      <i class="fas fa-images"></i>
+    </span>
+    <span>{{ 'navbar.gallery' | translate }}</span>
+  </a>
+  <a href="#contacts" class="mobile-nav-item">
+    <span class="icon">
+      <i class="fas fa-phone"></i>
+    </span>
+    <span>{{ 'navbar.contacts' | translate }}</span>
+  </a>
+  <a class="mobile-nav-item" (click)="toggleMenu()">
+    <span class="icon">
+      <i class="fas fa-globe"></i>
+    </span>
+    <span class="is-uppercase">{{ currentLang() }}</span>
+  </a>
+</nav>
+
+<!-- Mobile Language Menu (Overlay) -->
+<div class="mobile-lang-overlay" [class.is-active]="isMenuOpen()" (click)="toggleMenu()">
+  <div class="mobile-lang-menu" (click)="$event.stopPropagation()">
+    <div class="lang-menu-header">
+      <h3 class="title is-5 has-text-white mb-0">{{ 'navbar.langSelection' | translate }}</h3>
+      <button class="delete is-medium" (click)="toggleMenu()"></button>
+    </div>
+    <div class="lang-options">
+      <a class="lang-option" (click)="changeLang('ua'); toggleMenu()" [class.is-active]="currentLang() === 'ua'">
+        <span class="lang-name">Українська</span>
+        <span class="lang-code">UA</span>
+      </a>
+      <a class="lang-option" (click)="changeLang('en'); toggleMenu()" [class.is-active]="currentLang() === 'en'">
+        <span class="lang-name">English</span>
+        <span class="lang-code">EN</span>
+      </a>
+      <a class="lang-option" (click)="changeLang('de'); toggleMenu()" [class.is-active]="currentLang() === 'de'">
+        <span class="lang-name">Deutsch</span>
+        <span class="lang-code">DE</span>
+      </a>
+      <a class="lang-option" (click)="changeLang('it'); toggleMenu()" [class.is-active]="currentLang() === 'it'">
+        <span class="lang-name">Italiano</span>
+        <span class="lang-code">IT</span>
+      </a>
+      <a class="lang-option" (click)="changeLang('fr'); toggleMenu()" [class.is-active]="currentLang() === 'fr'">
+        <span class="lang-name">Français</span>
+        <span class="lang-code">FR</span>
+      </a>
+    </div>
+  </div>
+</div>
 
 <!-- Hero Section -->
 <section class="hero is-fullheight-with-navbar is-flex is-align-items-center is-justify-content-center">
@@ -219,6 +293,7 @@
     </p>
     <a href="https://github.com/IT-Kamianets/laznya.itkamianets.com" target="_blank" class="has-text-grey-dark is-size-5">
       <i class="fab fa-github"></i>
+    <br> designed by Anatoliy
     </a>
   </div>
 </footer>
