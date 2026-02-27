@@ -1,0 +1,53 @@
+{
+  "navbar": {
+    "title": "SAUNA",
+    "about": "Über uns",
+    "prices": "Preise",
+    "gallery": "Galerie",
+    "contacts": "Kontakte",
+    "book": "JETZT BUCHEN",
+    "langSelection": "Sprachwahl"
+  },
+  "hero": {
+    "title": "SAUNA AM NEUBAU",
+    "subtitle": "Wellness-Traditionen und wahre Entspannung",
+    "button": "PREISE ANSEHEN"
+  },
+  "about": {
+    "title": "Über unsere Sauna",
+    "text": "Unsere Sauna ist der perfekte Ort für alle, die Wert auf hochwertige Erholung, Ruhe und Gesundheit legen. Wir verbinden traditionelle Dampfmethoden mit modernem Komfort.",
+    "feature1": "Großes holzbeheiztes Dampfbad",
+    "feature2": "Wellnessbottich unter freiem Himmel",
+    "feature3": "Grillplatz (Grill)",
+    "feature4": "Möglichkeit zur Bestellung von Fertiggerichten"
+  },
+  "prices": {
+    "title": "Unsere Leistungen und Preise",
+    "sauna": "SAUNA",
+    "chan": "BOTTICH",
+    "grill": "GRILL",
+    "weekday": "Mo-Do",
+    "weekend": "Fr-So und Feiertage",
+    "hour": "UAH/Std",
+    "rent": "Miete",
+    "inventory": "Das gesamte Inventar wird zur Verfügung gestellt",
+    "minTime": "* Mindestbuchungszeit — <strong>2 Stunden</strong>"
+  },
+  "gallery": {
+    "title": "Galerie",
+    "more": "Mehr Fotos auf unserem"
+  },
+  "contacts": {
+    "title": "Wo wir sind",
+    "subtitle": "Kontakte",
+    "addressLabel": "Adresse:",
+    "addressValue": "Kamjanez-Podilskyj, Knjasiv Koriatowytschiw Str, 25-M",
+    "saunaOrder": "Sauna Buchung:",
+    "foodOrder": "Essen bestellen:",
+    "workingHoursLabel": "Öffnungszeiten:",
+    "workingHours": "Täglich von 10:00 bis 23:00"
+  },
+  "footer": {
+    "rights": "© 2026 SAUNA AM NEUBAU. Alle Rechte vorbehalten."
+  }
+}
