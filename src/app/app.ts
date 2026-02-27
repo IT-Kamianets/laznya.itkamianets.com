@@ -1,4 +1,4 @@
-import { Component, signal, OnInit, inject } from '@angular/core';
+import { Component, signal, OnInit, inject, HostListener } from '@angular/core';
 import AOS from 'aos';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 
@@ -14,9 +14,32 @@ export class App implements OnInit {
   protected readonly title = signal('laznya-app');
   protected isMenuOpen = signal(false);
   protected currentLang = signal('ua');
+  protected selectedImage = signal<string | null>(null);
+
+  @HostListener('document:click')
+  onDocumentClick() {
+    if (this.isMenuOpen()) {
+      this.isMenuOpen.set(false);
+    }
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscKey() {
+    this.closeLightbox();
+  }
 
   toggleMenu() {
     this.isMenuOpen.update(val => !val);
+  }
+
+  openLightbox(imagePath: string) {
+    this.selectedImage.set(imagePath);
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeLightbox() {
+    this.selectedImage.set(null);
+    document.body.style.overflow = '';
   }
 
   changeLang(lang: string) {

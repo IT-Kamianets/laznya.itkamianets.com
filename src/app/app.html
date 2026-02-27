@@ -55,6 +55,23 @@
       <span class="is-size-4 has-text-weight-bold text-orange">{{ 'navbar.title' | translate }}</span>
     </a>
     <div class="is-flex is-align-items-center">
+      <!-- Mobile Language Switcher -->
+      <div class="navbar-item has-dropdown is-active-mobile" (click)="$event.stopPropagation(); toggleMenu()">
+        <a class="navbar-link is-arrowless p-2">
+          <span class="icon text-orange">
+            <i class="fas fa-globe"></i>
+          </span>
+          <span class="is-uppercase ml-1 has-text-white">{{ currentLang() }}</span>
+        </a>
+        <div class="navbar-dropdown is-right" [class.is-hidden-mobile-custom]="!isMenuOpen()">
+          <a class="navbar-item" (click)="changeLang('ua'); toggleMenu()" [class.is-active]="currentLang() === 'ua'">UA</a>
+          <a class="navbar-item" (click)="changeLang('en'); toggleMenu()" [class.is-active]="currentLang() === 'en'">EN</a>
+          <a class="navbar-item" (click)="changeLang('de'); toggleMenu()" [class.is-active]="currentLang() === 'de'">DE</a>
+          <a class="navbar-item" (click)="changeLang('it'); toggleMenu()" [class.is-active]="currentLang() === 'it'">IT</a>
+          <a class="navbar-item" (click)="changeLang('fr'); toggleMenu()" [class.is-active]="currentLang() === 'fr'">FR</a>
+        </div>
+      </div>
+
       <a class="navbar-item p-2" href="https://www.instagram.com/laznya_na_noviy_budovy/" target="_blank">
         <span class="icon text-orange">
           <i class="fab fa-instagram fa-lg"></i>
@@ -87,45 +104,9 @@
     </span>
     <span>{{ 'navbar.contacts' | translate }}</span>
   </a>
-  <a class="mobile-nav-item" (click)="toggleMenu()">
-    <span class="icon">
-      <i class="fas fa-globe"></i>
-    </span>
-    <span class="is-uppercase">{{ currentLang() }}</span>
-  </a>
 </nav>
 
-<!-- Mobile Language Menu (Overlay) -->
-<div class="mobile-lang-overlay" [class.is-active]="isMenuOpen()" (click)="toggleMenu()">
-  <div class="mobile-lang-menu" (click)="$event.stopPropagation()">
-    <div class="lang-menu-header">
-      <h3 class="title is-5 has-text-white mb-0">{{ 'navbar.langSelection' | translate }}</h3>
-      <button class="delete is-medium" (click)="toggleMenu()"></button>
-    </div>
-    <div class="lang-options">
-      <a class="lang-option" (click)="changeLang('ua'); toggleMenu()" [class.is-active]="currentLang() === 'ua'">
-        <span class="lang-name">Українська</span>
-        <span class="lang-code">UA</span>
-      </a>
-      <a class="lang-option" (click)="changeLang('en'); toggleMenu()" [class.is-active]="currentLang() === 'en'">
-        <span class="lang-name">English</span>
-        <span class="lang-code">EN</span>
-      </a>
-      <a class="lang-option" (click)="changeLang('de'); toggleMenu()" [class.is-active]="currentLang() === 'de'">
-        <span class="lang-name">Deutsch</span>
-        <span class="lang-code">DE</span>
-      </a>
-      <a class="lang-option" (click)="changeLang('it'); toggleMenu()" [class.is-active]="currentLang() === 'it'">
-        <span class="lang-name">Italiano</span>
-        <span class="lang-code">IT</span>
-      </a>
-      <a class="lang-option" (click)="changeLang('fr'); toggleMenu()" [class.is-active]="currentLang() === 'fr'">
-        <span class="lang-name">Français</span>
-        <span class="lang-code">FR</span>
-      </a>
-    </div>
-  </div>
-</div>
+<!-- Removed Mobile Language Menu Overlay as requested -->
 
 <!-- Hero Section -->
 <section class="hero is-fullheight-with-navbar is-flex is-align-items-center is-justify-content-center">
@@ -161,7 +142,7 @@
         </ul>
       </div>
       <div class="column is-6" data-aos="fade-left">
-        <figure class="image is-4by3 gallery-item">
+        <figure class="image is-4by3 gallery-item pointer" (click)="openLightbox('/assets/images/image.png')">
           <img src="/assets/images/image.png" alt="Interior">
         </figure>
       </div>
@@ -226,21 +207,21 @@
     <h2 class="section-title" data-aos="fade-up">{{ 'gallery.title' | translate }}</h2>
     <div class="columns is-multiline">
       <div class="column is-4" data-aos="flip-left" data-aos-delay="100">
-        <div class="gallery-item orange-border">
+        <div class="gallery-item orange-border" (click)="openLightbox('/assets/images/1.png')">
           <figure class="image is-square">
             <img src="/assets/images/1.png" alt="Sauna 1">
           </figure>
         </div>
       </div>
       <div class="column is-4" data-aos="flip-left" data-aos-delay="200">
-        <div class="gallery-item orange-border">
+        <div class="gallery-item orange-border" (click)="openLightbox('/assets/images/2.png')">
           <figure class="image is-square">
             <img src="/assets/images/2.png" alt="Sauna 2">
           </figure>
         </div>
       </div>
       <div class="column is-4" data-aos="flip-left" data-aos-delay="300">
-        <div class="gallery-item orange-border">
+        <div class="gallery-item orange-border" (click)="openLightbox('/assets/images/3.png')">
           <figure class="image is-square">
             <img src="/assets/images/3.png" alt="Sauna 3">
           </figure>
@@ -253,13 +234,26 @@
   </div>
 </section>
 
+<!-- Lightbox Overlay -->
+@if (selectedImage()) {
+  <div class="modal is-active lightbox-modal">
+    <div class="modal-background" (click)="closeLightbox()"></div>
+    <div class="modal-content">
+      <p class="image">
+        <img [src]="selectedImage()" alt="Gallery image">
+      </p>
+    </div>
+    <button class="modal-close is-large" aria-label="close" (click)="closeLightbox()"></button>
+  </div>
+}
+
 <!-- Map & Contacts Section -->
 <section id="contacts" class="section">
   <div class="container">
     <h2 class="section-title" data-aos="fade-up">{{ 'contacts.title' | translate }}</h2>
     <div class="columns">
-      <div class="column is-8" data-aos="zoom-in">
-        <div class="map-container">
+      <div class="column is-8 is-flex" data-aos="zoom-in">
+        <div class="map-container w-100">
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2591.1345479001334!2d26.6020558!3d48.6768879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4733b9843ef0c329%3A0x8e0b3a2699126f01!2sLaznya!5e0!3m2!1suk!2sua!4v1710000000000!5m2!1suk!2sua" 
             allowfullscreen="" 
@@ -267,8 +261,8 @@
           </iframe>
         </div>
       </div>
-      <div class="column is-4" data-aos="fade-left">
-        <div class="box has-background-black has-text-white orange-border p-5">
+      <div class="column is-4 is-flex" data-aos="fade-left">
+        <div class="box has-background-black has-text-white orange-border p-5 contacts-box w-100">
           <h3 class="title is-4 text-orange mb-4">{{ 'contacts.subtitle' | translate }}</h3>
           <p class="mb-3"><strong>{{ 'contacts.addressLabel' | translate }}</strong> {{ 'contacts.addressValue' | translate }}</p>
           <p class="mb-3"><strong>{{ 'contacts.saunaOrder' | translate }}</strong> <br><a href="tel:+380980054499" class="has-text-white is-size-5">(098) 005-44-99</a></p>
